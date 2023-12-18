@@ -20,6 +20,8 @@ public class CommentVo {
     private String content;
     //回复目标评论id
     private Long toCommentId;
+    //头像
+    private String portrait;
     //回复目标评论用户名
     private String toCommentUserName;
     private String username;

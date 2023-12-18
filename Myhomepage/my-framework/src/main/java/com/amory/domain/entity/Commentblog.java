@@ -31,7 +31,8 @@ public class Commentblog  {
     private String content;
     //回复目标评论id
     private Long toCommentId;
-    
+    //缩略图
+    private String portrait;
     private String username;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;

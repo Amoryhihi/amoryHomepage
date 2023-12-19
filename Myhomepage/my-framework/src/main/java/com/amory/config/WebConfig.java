@@ -1,11 +1,13 @@
 package com.amory.config;
 
 import com.amory.common.JwtInterceptor;
+import com.amory.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
@@ -25,5 +27,9 @@ public class WebConfig implements  WebMvcConfigurer {
         registry.addInterceptor(jwtInterceptor).addPathPatterns("/api/articleChange/**");
     }
 
-
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/upload/**")
+                .addResourceLocations("file:///" + FileUtil.UPLOADS_PATH);
+    }
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
     @Autowired
-    private AdminService adminService;;
+    private AdminService adminService;
 
     @PostMapping("/login")
     public ResponseResult login(@RequestBody LoginRequest request){
